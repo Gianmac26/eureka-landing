@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eureka Agencia Digital | Marketing que convierte clientes</title>
+  <meta name="description" content="Agencia digital en Peru especializada en estrategia, paid media, contenido, datos y automatizacion para convertir presencia digital en clientes reales." />
+  <meta property="og:title" content="Eureka Agencia Digital | Marketing que convierte clientes" />
+  <meta property="og:description" content="Estrategia, anuncios, contenido, datos y automatizacion para generar mas clientes y ventas." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -133,6 +138,29 @@
     .faq-item.active .faq-icon {
       transform: rotate(45deg);
     }
+
+    .mobile-menu {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transform: translateY(-8px);
+      transition: max-height .3s ease, opacity .25s ease, transform .25s ease;
+    }
+
+    .mobile-menu.open {
+      max-height: 420px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
   </style>
 </head>
 
@@ -162,9 +190,26 @@
         <a href="#faq" class="hover:text-white">FAQ</a>
       </div>
 
-      <a href="#contacto" class="btn-primary px-5 py-3 rounded-full text-sm font-bold">
-        Hablemos
-      </a>
+      <div class="flex items-center gap-3">
+        <a href="#contacto" class="btn-primary px-5 py-3 rounded-full text-sm font-bold">
+          Hablemos
+        </a>
+
+        <button id="mobile-menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden w-11 h-11 rounded-full glass flex items-center justify-center text-white">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu lg:hidden max-w-7xl mx-auto mt-3 glass rounded-3xl px-6">
+      <div class="py-5 flex flex-col gap-4 text-sm text-slate-200">
+        <a href="#ecosistema" class="hover:text-white">Sistema</a>
+        <a href="#servicios" class="hover:text-white">Servicios</a>
+        <a href="#resultados" class="hover:text-white">Resultados</a>
+        <a href="#proceso" class="hover:text-white">Proceso</a>
+        <a href="#testimonios" class="hover:text-white">Testimonios</a>
+        <a href="#faq" class="hover:text-white">FAQ</a>
+      </div>
     </div>
   </nav>
 
@@ -173,7 +218,7 @@
     <div class="orb top-0 left-0"></div>
     <div class="orb bottom-0 right-0"></div>
 
-    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-[0.95fr_1.05fr] gap-12 xl:gap-20 items-center relative z-10">
 
       <div>
         <div class="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-7 text-sm text-blue-100">
@@ -181,9 +226,9 @@
           Marketing digital estratégico para negocios en Perú
         </div>
 
-        <h1 class="text-5xl md:text-7xl xl:text-8xl font-black leading-[.95] tracking-tight mb-8">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-[7rem] font-black leading-[1.02] tracking-tight mb-8 max-w-3xl">
           Transforma tu marketing
-          <span class="gradient-text">sin complicaciones.</span>
+          <span class="block gradient-text">sin complicaciones.</span>
         </h1>
 
         <p class="text-lg md:text-xl text-slate-300 max-w-xl leading-relaxed mb-10">
@@ -220,7 +265,7 @@
       </div>
 
       <div class="relative">
-        <div class="relative w-full max-w-[560px] mx-auto aspect-square glass rounded-full p-10 float">
+        <div class="relative w-full max-w-[500px] xl:max-w-[540px] mx-auto aspect-square glass rounded-full p-8 xl:p-10 float">
           <div class="absolute inset-10 rounded-full border border-white/15"></div>
           <div class="absolute inset-24 rounded-full border border-white/15"></div>
           <div class="absolute inset-40 rounded-full border border-white/15"></div>
@@ -293,7 +338,7 @@
 
         <div class="relative">
           <div class="rounded-[32px] overflow-hidden shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=80" class="w-full h-[420px] object-cover" alt="Estrategia digital">
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=80" class="w-full h-[420px] object-cover" alt="Estrategia digital" loading="lazy" decoding="async">
           </div>
 
           <div class="absolute -top-6 -left-6 mock-card rounded-2xl p-5 w-56">
@@ -317,7 +362,7 @@
       <div class="grid lg:grid-cols-2 gap-16 items-center mb-28">
         <div class="relative order-2 lg:order-1">
           <div class="rounded-[32px] overflow-hidden shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=80" class="w-full h-[420px] object-cover" alt="Paid Media">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=80" class="w-full h-[420px] object-cover" alt="Paid Media" loading="lazy" decoding="async">
           </div>
 
           <div class="absolute -top-6 -left-6 mock-card rounded-2xl p-5 w-52">
@@ -377,7 +422,7 @@
 
         <div class="relative">
           <div class="rounded-[32px] overflow-hidden shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80" class="w-full h-[420px] object-cover" alt="Creatividad">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80" class="w-full h-[420px] object-cover" alt="Creatividad" loading="lazy" decoding="async">
           </div>
 
           <div class="absolute -top-6 right-10 mock-card rounded-2xl p-5">
@@ -396,7 +441,7 @@
       <div class="grid lg:grid-cols-2 gap-16 items-center mb-28">
         <div class="relative order-2 lg:order-1">
           <div class="rounded-[32px] overflow-hidden shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=80" class="w-full h-[420px] object-cover" alt="Datos">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=80" class="w-full h-[420px] object-cover" alt="Datos" loading="lazy" decoding="async">
           </div>
 
           <div class="absolute -top-6 -left-6 mock-card rounded-2xl p-5 w-56">
@@ -452,7 +497,7 @@
 
         <div class="relative">
           <div class="rounded-[32px] overflow-hidden shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80" class="w-full h-[420px] object-cover" alt="Orgánico">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80" class="w-full h-[420px] object-cover" alt="Orgánico" loading="lazy" decoding="async">
           </div>
 
           <div class="absolute -top-6 -left-6 mock-card rounded-2xl p-5 w-64">
@@ -591,18 +636,24 @@
       </div>
 
       <div class="space-y-4">
-        <div class="faq-item glass rounded-3xl p-6 cursor-pointer">
-          <div class="flex justify-between"><h3 class="text-xl font-bold">¿Trabajan con negocios pequeños?</h3><span class="faq-icon text-2xl text-violet-300 transition">+</span></div>
+        <div class="faq-item glass rounded-3xl p-6">
+          <button type="button" class="faq-question w-full flex justify-between text-left" aria-expanded="false">
+            <span class="text-xl font-bold">¿Trabajan con negocios pequeños?</span><span class="faq-icon text-2xl text-violet-300 transition">+</span>
+          </button>
           <div class="faq-answer text-slate-400 mt-4">Sí. Trabajamos con emprendedores, negocios locales y pymes.</div>
         </div>
 
-        <div class="faq-item glass rounded-3xl p-6 cursor-pointer">
-          <div class="flex justify-between"><h3 class="text-xl font-bold">¿Cuándo se ven resultados?</h3><span class="faq-icon text-2xl text-violet-300 transition">+</span></div>
+        <div class="faq-item glass rounded-3xl p-6">
+          <button type="button" class="faq-question w-full flex justify-between text-left" aria-expanded="false">
+            <span class="text-xl font-bold">¿Cuándo se ven resultados?</span><span class="faq-icon text-2xl text-violet-300 transition">+</span>
+          </button>
           <div class="faq-answer text-slate-400 mt-4">Los primeros indicadores suelen verse durante las primeras semanas.</div>
         </div>
 
-        <div class="faq-item glass rounded-3xl p-6 cursor-pointer">
-          <div class="flex justify-between"><h3 class="text-xl font-bold">¿También crean contenido?</h3><span class="faq-icon text-2xl text-violet-300 transition">+</span></div>
+        <div class="faq-item glass rounded-3xl p-6">
+          <button type="button" class="faq-question w-full flex justify-between text-left" aria-expanded="false">
+            <span class="text-xl font-bold">¿También crean contenido?</span><span class="faq-icon text-2xl text-violet-300 transition">+</span>
+          </button>
           <div class="faq-answer text-slate-400 mt-4">Sí. Creamos contenido, anuncios, copies, piezas visuales y landing pages.</div>
         </div>
       </div>
@@ -625,7 +676,7 @@
           </p>
 
           <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="https://wa.me/51999999999?text=Hola%20Eureka%2C%20quiero%20agendar%20una%20llamada" target="_blank" class="bg-white text-slate-950 px-8 py-5 rounded-2xl font-black hover:scale-105 transition">
+            <a href="https://wa.me/51999999999?text=Hola%20Eureka%2C%20quiero%20agendar%20una%20llamada" target="_blank" rel="noopener" class="bg-white text-slate-950 px-8 py-5 rounded-2xl font-black hover:scale-105 transition">
               Agendar llamada
             </a>
             <a href="mailto:hola@eurekadigital.pe" class="bg-slate-950/25 border border-white/25 px-8 py-5 rounded-2xl font-bold hover:bg-slate-950/40 transition">
@@ -685,14 +736,36 @@
   <!-- WHATSAPP FLOAT -->
   <a href="https://wa.me/51999999999?text=Hola%20Eureka%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n"
      target="_blank"
+     rel="noopener"
      class="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-green-500 flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
   <script>
-    document.querySelectorAll('.faq-item').forEach(item => {
-      item.addEventListener('click', () => {
-        item.classList.toggle('active');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
+        mobileMenuButton.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+      });
+
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
+          mobileMenuButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        });
+      });
+    }
+
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const isOpen = item.classList.toggle('active');
+        button.setAttribute('aria-expanded', String(isOpen));
       });
     });
   </script>
