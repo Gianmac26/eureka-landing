@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eureka Agencia Digital | Marketing que convierte clientes</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            jakarta: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background: #020617;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .glass {
+      background: rgba(255,255,255,.07);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,.13);
+    }
+
+    .glass-card {
+      background: rgba(255,255,255,.06);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,.12);
+      transition: all .35s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(147, 51, 234, .5);
+      box-shadow: 0 25px 70px rgba(99,102,241,.22);
+    }
+
+    .hero-bg {
+      background:
+        radial-gradient(circle at 20% 10%, rgba(124,58,237,.3), transparent 30%),
+        radial-gradient(circle at 85% 20%, rgba(37,99,235,.34), transparent 32%),
+        radial-gradient(circle at 50% 100%, rgba(14,165,233,.2), transparent 40%),
+        #020617;
+    }
+
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 55px 55px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff, #c084fc, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #7c3aed, #2563eb);
+      box-shadow: 0 18px 45px rgba(124,58,237,.35);
+      transition: all .3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 24px 65px rgba(124,58,237,.5);
+    }
+
+    .float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-16px); }
+    }
+
+    .orb {
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 999px;
+      background: rgba(124,58,237,.16);
+      filter: blur(110px);
+      pointer-events: none;
+    }
+
+    .white-section {
+      background:
+        radial-gradient(circle at top left, rgba(124,58,237,.09), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(37,99,235,.08), transparent 28%),
+        #ffffff;
+      color: #160c35;
+    }
+
+    .mock-card {
+      background: rgba(255,255,255,.9);
+      border: 1px solid rgba(15,23,42,.08);
+      box-shadow: 0 20px 50px rgba(15,23,42,.12);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 220px;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+  </style>
+</head>
+
+<body class="hero-bg">
+
+  <div class="fixed inset-0 grid-bg opacity-40 pointer-events-none"></div>
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 w-full z-50 px-4 py-4">
+    <div class="max-w-7xl mx-auto glass rounded-full px-5 md:px-7 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-blue-400 flex items-center justify-center font-black">
+          E
+        </div>
+        <div>
+          <div class="font-black leading-none">EUREKA</div>
+          <div class="text-[11px] text-blue-200">Agencia Digital</div>
+        </div>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-8 text-sm text-slate-300">
+        <a href="#ecosistema" class="hover:text-white">Sistema</a>
+        <a href="#servicios" class="hover:text-white">Servicios</a>
+        <a href="#resultados" class="hover:text-white">Resultados</a>
+        <a href="#proceso" class="hover:text-white">Proceso</a>
+        <a href="#testimonios" class="hover:text-white">Testimonios</a>
+        <a href="#faq" class="hover:text-white">FAQ</a>
+      </div>
+
+      <a href="#contacto" class="btn-primary px-5 py-3 rounded-full text-sm font-bold">
+        Hablemos
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative pt-36 md:pt-44 pb-28 px-6 overflow-hidden">
+    <div class="orb top-0 left-0"></div>
+    <div class="orb bottom-0 right-0"></div>
+
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
+
+      <div>
+        <div class="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-7 text-sm text-blue-100">
+          <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+          Marketing digital estratégico para negocios en Perú
+        </div>
+
+        <h1 class="text-5xl md:text-7xl xl:text-8xl font-black leading-[.95] tracking-tight mb-8">
+          Transforma tu marketing
+          <span class="gradient-text">sin complicaciones.</span>
+        </h1>
+
+        <p class="text-lg md:text-xl text-slate-300 max-w-xl leading-relaxed mb-10">
+          Centralizamos estrategia, anuncios, contenido, datos y automatización para convertir tu presencia digital en clientes reales.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 mb-10">
+          <a href="#contacto" class="btn-primary text-center px-8 py-5 rounded-2xl font-bold">
+            Quiero más clientes
+          </a>
+          <a href="#ecosistema" class="glass text-center px-8 py-5 rounded-2xl font-bold hover:bg-white/10 transition">
+            Ver sistema
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
+          <div>
+            <div class="text-3xl font-black">+120</div>
+            <div class="text-sm text-slate-400">Campañas</div>
+          </div>
+          <div>
+            <div class="text-3xl font-black">+10K</div>
+            <div class="text-sm text-slate-400">Leads</div>
+          </div>
+          <div>
+            <div class="text-3xl font-black">5.8X</div>
+            <div class="text-sm text-slate-400">ROAS máx.</div>
+          </div>
+          <div>
+            <div class="text-3xl font-black">92%</div>
+            <div class="text-sm text-slate-400">Retención</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="relative w-full max-w-[560px] mx-auto aspect-square glass rounded-full p-10 float">
+          <div class="absolute inset-10 rounded-full border border-white/15"></div>
+          <div class="absolute inset-24 rounded-full border border-white/15"></div>
+          <div class="absolute inset-40 rounded-full border border-white/15"></div>
+
+          <div class="absolute top-12 left-1/2 -translate-x-1/2 glass px-4 py-2 rounded-full text-xs">
+            Eureka Growth Platform
+          </div>
+
+          <div class="absolute top-[25%] left-[18%] text-sm font-bold">Paid Media</div>
+          <div class="absolute top-[30%] right-[18%] text-sm font-bold">Datos</div>
+          <div class="absolute bottom-[30%] left-[18%] text-sm font-bold">Creatividad</div>
+          <div class="absolute bottom-[25%] right-[18%] text-sm font-bold">Orgánico</div>
+          <div class="absolute bottom-[12%] left-1/2 -translate-x-1/2 text-sm font-bold">Conversión</div>
+
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-28 h-28 rounded-3xl bg-gradient-to-br from-violet-500 to-blue-500 flex items-center justify-center shadow-2xl shadow-violet-500/40 rotate-45">
+              <span class="-rotate-45 text-4xl font-black">E</span>
+            </div>
+          </div>
+
+          <div class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-8 space-y-3">
+            <div class="mock-card rounded-xl px-4 py-2 text-slate-900 text-sm font-bold">Google</div>
+            <div class="mock-card rounded-xl px-4 py-2 text-slate-900 text-sm font-bold">Meta</div>
+            <div class="mock-card rounded-xl px-4 py-2 text-slate-900 text-sm font-bold">TikTok</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ECOSYSTEM -->
+  <section id="ecosistema" class="white-section px-6 py-28 relative z-10">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="max-w-4xl mb-20">
+        <div class="inline-flex items-center px-4 py-2 rounded-full border border-violet-500 text-violet-600 text-sm font-black mb-6">
+          Nuestro equipo marca la diferencia
+        </div>
+
+        <h2 class="text-4xl md:text-6xl font-black leading-tight mb-6">
+          Todo lo que necesitas para hacer crecer tu marca, en un solo lugar.
+        </h2>
+
+        <p class="text-lg text-slate-600 max-w-3xl">
+          Servicios diseñados por expertos, potenciados por datos, creatividad e inteligencia artificial.
+        </p>
+      </div>
+
+      <!-- ESTRATEGIA -->
+      <div class="grid lg:grid-cols-2 gap-16 items-center mb-28">
+        <div>
+          <div class="w-14 h-14 rounded-2xl border border-violet-300 text-violet-600 flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+
+          <h3 class="text-3xl md:text-4xl font-black mb-5">Estrategia</h3>
+
+          <p class="text-slate-600 mb-8 leading-relaxed">
+            Conectamos datos, objetivos y personas para transformar tu marketing en un plan claro de crecimiento.
+          </p>
+
+          <ul class="space-y-5 text-slate-700">
+            <li>• ¿Quieres descubrir nuevas oportunidades?<br><strong>Estudia tu mercado</strong></li>
+            <li>• ¿Quieres alinear acciones y objetivos?<br><strong>Traza tu estrategia digital</strong></li>
+            <li>• ¿Necesitas apoyo para escalar?<br><strong>Crece con consultoría experta</strong></li>
+            <li>• ¿Quieres detectar bloqueos técnicos?<br><strong>Haz una auditoría digital</strong></li>
+          </ul>
+        </div>
+
+        <div class="relative">
+          <div class="rounded-[32px] overflow-hidden shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=80" class="w-full h-[420px] object-cover" alt="Estrategia digital">
+          </div>
+
+          <div class="absolute -top-6 -left-6 mock-card rounded-2xl p-5 w-56">
+            <p class="text-xs text-slate-500 mb-3">Menciones</p>
+            <div class="h-24 flex items-end gap-2">
+              <div class="w-full h-[35%] bg-violet-200 rounded-t"></div>
+              <div class="w-full h-[45%] bg-violet-300 rounded-t"></div>
+              <div class="w-full h-[60%] bg-violet-400 rounded-t"></div>
+              <div class="w-full h-[80%] bg-violet-500 rounded-t"></div>
+            </div>
+          </div>
+
+          <div class="absolute -bottom-6 left-10 mock-card rounded-2xl p-5">
+            <p class="text-sm text-slate-500">Engagement</p>
+            <p class="text-3xl font-black text-violet-600">5,3%</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAID MEDIA -->
+      <div class="grid lg:grid-cols-2 gap-16 items-center mb-28">
+        <div class="relative order-2 lg:order-1">
+          <div class="rounded-[32px] overflow-hidden shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=80" class="w-full h-[420px] object-cover" alt="Paid Media">
+          </div>
+
+          <div class="absolute -top-6 -left-6 mock-card rounded-2xl p-5 w-52">
+            <p class="text-xs text-slate-500 mb-2">Ventas totales</p>
+            <div class="h-20 flex items-end gap-2">
+              <div class="w-full h-[30%] bg-violet-200 rounded-t"></div>
+              <div class="w-full h-[50%] bg-violet-300 rounded-t"></div>
+              <div class="w-full h-[70%] bg-violet-500 rounded-t"></div>
+            </div>
+          </div>
+
+          <div class="absolute -top-5 right-10 mock-card rounded-2xl p-5">
+            <p class="text-sm text-slate-500">ROAS</p>
+            <p class="text-3xl font-black text-violet-600">5.8x</p>
+          </div>
+        </div>
+
+        <div class="order-1 lg:order-2">
+          <div class="w-14 h-14 rounded-2xl border border-violet-300 text-violet-600 flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-rectangle-ad"></i>
+          </div>
+
+          <h3 class="text-3xl md:text-4xl font-black mb-5">Paid Media</h3>
+
+          <p class="text-slate-600 mb-8 leading-relaxed">
+            Creamos campañas inteligentes que combinan estrategia, IA y análisis para llegar a la audiencia correcta.
+          </p>
+
+          <ul class="space-y-5 text-slate-700">
+            <li>• ¿Buscas captar prospectos activos?<br><strong>SEM & PPC</strong></li>
+            <li>• ¿Quieres impactar en redes sociales?<br><strong>Meta Ads y TikTok Ads</strong></li>
+            <li>• ¿Prefieres automatización avanzada?<br><strong>Escala con IA y segmentación</strong></li>
+            <li>• ¿Quieres mejorar tus conversiones?<br><strong>Optimiza tus campañas</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CREATIVIDAD -->
+      <div class="grid lg:grid-cols-2 gap-16 items-center mb-28">
+        <div>
+          <div class="w-14 h-14 rounded-2xl border border-violet-300 text-violet-600 flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+
+          <h3 class="text-3xl md:text-4xl font-black mb-5">Creatividad</h3>
+
+          <p class="text-slate-600 mb-8 leading-relaxed">
+            Diseñamos piezas, videos y conceptos que cuentan historias, generan confianza y hacen memorable tu marca.
+          </p>
+
+          <ul class="space-y-5 text-slate-700">
+            <li>• ¿Quieres impulsar tu marca visualmente?<br><strong>Branding & diseño</strong></li>
+            <li>• ¿Buscas contenido que conecte?<br><strong>Producción audiovisual</strong></li>
+            <li>• ¿Necesitas anuncios impactantes?<br><strong>Creatividades para performance</strong></li>
+          </ul>
+        </div>
+
+        <div class="relative">
+          <div class="rounded-[32px] overflow-hidden shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80" class="w-full h-[420px] object-cover" alt="Creatividad">
+          </div>
+
+          <div class="absolute -top-6 right-10 mock-card rounded-2xl p-5">
+            <p class="text-sm text-slate-500">Creatividades</p>
+            <p class="text-3xl font-black text-violet-600">10.2%</p>
+          </div>
+
+          <div class="absolute -bottom-6 -right-4 mock-card rounded-2xl p-5">
+            <p class="text-sm text-slate-500">Engagement</p>
+            <p class="text-3xl font-black text-violet-600">+137%</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DATOS -->
+      <div class="grid lg:grid-cols-2 gap-16 items-center mb-28">
+        <div class="relative order-2 lg:order-1">
+          <div class="rounded-[32px] overflow-hidden shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=80" class="w-full h-[420px] object-cover" alt="Datos">
+          </div>
+
+          <div class="absolute -top-6 -left-6 mock-card rounded-2xl p-5 w-56">
+            <p class="text-xs text-slate-500 mb-2">Calidad de datos</p>
+            <p class="text-4xl font-black text-violet-600">94%</p>
+          </div>
+
+          <div class="absolute -bottom-6 left-10 mock-card rounded-2xl p-5">
+            <p class="text-sm text-slate-500">Tracking</p>
+            <p class="text-3xl font-black text-violet-600">98%</p>
+          </div>
+        </div>
+
+        <div class="order-1 lg:order-2">
+          <div class="w-14 h-14 rounded-2xl border border-violet-300 text-violet-600 flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-database"></i>
+          </div>
+
+          <h3 class="text-3xl md:text-4xl font-black mb-5">Datos</h3>
+
+          <p class="text-slate-600 mb-8 leading-relaxed">
+            Capturamos, medimos y analizamos datos para tomar decisiones claras y optimizar cada acción digital.
+          </p>
+
+          <ul class="space-y-5 text-slate-700">
+            <li>• ¿Quieres medir cada interacción?<br><strong>Tracking y analítica</strong></li>
+            <li>• ¿Necesitas mejorar rendimiento?<br><strong>Optimización por datos</strong></li>
+            <li>• ¿Buscas reportes claros?<br><strong>Dashboards y medición</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ORGÁNICO -->
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <div class="w-14 h-14 rounded-2xl border border-violet-300 text-violet-600 flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+
+          <h3 class="text-3xl md:text-4xl font-black mb-5">Orgánico</h3>
+
+          <p class="text-slate-600 mb-8 leading-relaxed">
+            Impulsamos tu presencia con contenido, comunidad, SEO y comunicación para que tu marca crezca con propósito.
+          </p>
+
+          <ul class="space-y-5 text-slate-700">
+            <li>• ¿Quieres escuchar a tu audiencia?<br><strong>Social Listening</strong></li>
+            <li>• ¿Buscas mejorar tu visibilidad online?<br><strong>SEO</strong></li>
+            <li>• ¿Quieres convertir con contenido directo?<br><strong>Email Marketing</strong></li>
+            <li>• ¿Te interesa construir comunidad?<br><strong>Community Management</strong></li>
+          </ul>
+        </div>
+
+        <div class="relative">
+          <div class="rounded-[32px] overflow-hidden shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80" class="w-full h-[420px] object-cover" alt="Orgánico">
+          </div>
+
+          <div class="absolute -top-6 -left-6 mock-card rounded-2xl p-5 w-64">
+            <p class="text-sm text-slate-500 mb-3">Métricas orgánicas</p>
+            <div class="space-y-3">
+              <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+                <div class="h-full w-[84%] bg-violet-500"></div>
+              </div>
+              <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+                <div class="h-full w-[62%] bg-blue-500"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute -bottom-6 right-10 mock-card rounded-2xl p-5">
+            <p class="text-sm text-slate-500">Autoridad</p>
+            <p class="text-3xl font-black text-violet-600">84/100</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="servicios" class="px-6 py-24 relative z-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-3xl mb-16">
+        <p class="text-violet-300 font-bold mb-4">SERVICIOS</p>
+        <h2 class="text-4xl md:text-6xl font-black leading-tight mb-6">
+          Servicios creados para vender más.
+        </h2>
+        <p class="text-xl text-slate-400">
+          Unimos estrategia, creatividad, anuncios y automatización para generar crecimiento real.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="glass-card rounded-3xl p-8"><i class="fa-brands fa-facebook-f text-3xl text-violet-300 mb-6"></i><h3 class="text-xl font-bold mb-3">Meta Ads</h3><p class="text-slate-400">Campañas en Facebook e Instagram enfocadas en leads y ventas.</p></div>
+        <div class="glass-card rounded-3xl p-8"><i class="fa-brands fa-google text-3xl text-violet-300 mb-6"></i><h3 class="text-xl font-bold mb-3">Google Ads</h3><p class="text-slate-400">Captamos personas que ya están buscando lo que vendes.</p></div>
+        <div class="glass-card rounded-3xl p-8"><i class="fa-brands fa-tiktok text-3xl text-violet-300 mb-6"></i><h3 class="text-xl font-bold mb-3">TikTok Ads</h3><p class="text-slate-400">Anuncios creativos para llegar a nuevas audiencias.</p></div>
+        <div class="glass-card rounded-3xl p-8"><i class="fa-solid fa-mobile-screen text-3xl text-violet-300 mb-6"></i><h3 class="text-xl font-bold mb-3">Social Media</h3><p class="text-slate-400">Gestión profesional de redes sociales.</p></div>
+        <div class="glass-card rounded-3xl p-8"><i class="fa-solid fa-wand-magic-sparkles text-3xl text-violet-300 mb-6"></i><h3 class="text-xl font-bold mb-3">Content Creation</h3><p class="text-slate-400">Reels, copies, piezas gráficas y contenido estratégico.</p></div>
+        <div class="glass-card rounded-3xl p-8"><i class="fa-solid fa-pen-nib text-3xl text-violet-300 mb-6"></i><h3 class="text-xl font-bold mb-3">Branding & Diseño</h3><p class="text-slate-400">Identidad visual premium para diferenciar tu marca.</p></div>
+        <div class="glass-card rounded-3xl p-8"><i class="fa-solid fa-laptop-code text-3xl text-violet-300 mb-6"></i><h3 class="text-xl font-bold mb-3">Landing Pages</h3><p class="text-slate-400">Páginas diseñadas para convertir tráfico en prospectos.</p></div>
+        <div class="glass-card rounded-3xl p-8"><i class="fa-brands fa-whatsapp text-3xl text-violet-300 mb-6"></i><h3 class="text-xl font-bold mb-3">WhatsApp Leads</h3><p class="text-slate-400">Sistemas para convertir conversaciones en oportunidades.</p></div>
+        <div class="glass-card rounded-3xl p-8"><i class="fa-solid fa-robot text-3xl text-violet-300 mb-6"></i><h3 class="text-xl font-bold mb-3">Automatización IA</h3><p class="text-slate-400">Automatización de marketing y seguimiento inteligente.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMS -->
+  <section class="px-6 py-24 bg-slate-950/70 relative z-10">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="text-violet-300 font-bold mb-4">EL PROBLEMA</p>
+        <h2 class="text-4xl md:text-6xl font-black leading-tight mb-8">
+          Publicar sin estrategia no genera ventas.
+        </h2>
+        <p class="text-slate-400 text-lg">
+          Muchos negocios invierten tiempo y dinero en digital, pero no tienen un sistema para convertir atención en clientes.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <div class="glass rounded-2xl p-6">❌ Publican contenido sin objetivos comerciales.</div>
+        <div class="glass rounded-2xl p-6">❌ Invierten en anuncios sin medir conversiones.</div>
+        <div class="glass rounded-2xl p-6">❌ Tienen branding débil y poca diferenciación.</div>
+        <div class="glass rounded-2xl p-6">❌ No cuentan con landing pages ni seguimiento.</div>
+        <div class="glass rounded-2xl p-6">❌ Pierden prospectos por responder tarde.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="proceso" class="px-6 py-24 relative z-10">
+    <div class="max-w-7xl mx-auto text-center">
+      <p class="text-violet-300 font-bold mb-4">PROCESO</p>
+      <h2 class="text-4xl md:text-6xl font-black mb-16">
+        Así trabajamos tu crecimiento.
+      </h2>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="glass-card rounded-3xl p-8"><div class="text-5xl font-black text-violet-300 mb-5">01</div><h3 class="text-xl font-bold mb-3">Diagnóstico</h3><p class="text-slate-400">Analizamos tu negocio, mercado y oportunidades.</p></div>
+        <div class="glass-card rounded-3xl p-8"><div class="text-5xl font-black text-violet-300 mb-5">02</div><h3 class="text-xl font-bold mb-3">Estrategia</h3><p class="text-slate-400">Creamos un plan claro para vender más.</p></div>
+        <div class="glass-card rounded-3xl p-8"><div class="text-5xl font-black text-violet-300 mb-5">03</div><h3 class="text-xl font-bold mb-3">Implementación</h3><p class="text-slate-400">Ejecutamos campañas, contenido y automatizaciones.</p></div>
+        <div class="glass-card rounded-3xl p-8"><div class="text-5xl font-black text-violet-300 mb-5">04</div><h3 class="text-xl font-bold mb-3">Optimización</h3><p class="text-slate-400">Medimos y escalamos lo que genera retorno.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="resultados" class="px-6 py-24 bg-slate-950/70 relative z-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-3xl mb-16">
+        <p class="text-violet-300 font-bold mb-4">RESULTADOS</p>
+        <h2 class="text-4xl md:text-6xl font-black leading-tight mb-6">
+          Métricas que sí importan.
+        </h2>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6">
+        <div class="glass-card rounded-3xl p-8"><span class="text-slate-400">Clínica estética</span><h3 class="text-5xl font-black my-6">214 Leads</h3><p class="text-slate-400">Meta Ads + WhatsApp Automation en 30 días.</p></div>
+        <div class="glass-card rounded-3xl p-8"><span class="text-slate-400">Restaurante local</span><h3 class="text-5xl font-black my-6">S/ 68K</h3><p class="text-slate-400">Ventas atribuidas a campañas digitales.</p></div>
+        <div class="glass-card rounded-3xl p-8"><span class="text-slate-400">Constructora</span><h3 class="text-5xl font-black my-6">5.8X ROAS</h3><p class="text-slate-400">Google Ads + landing page optimizada.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonios" class="px-6 py-24 relative z-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-violet-300 font-bold mb-4">TESTIMONIOS</p>
+        <h2 class="text-4xl md:text-6xl font-black">
+          Clientes que dejaron de improvisar.
+        </h2>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6">
+        <div class="glass-card rounded-3xl p-8"><p class="text-slate-300 mb-8">“Ahora recibimos prospectos todos los días por WhatsApp.”</p><div class="font-bold">Carlos Mendoza</div><div class="text-sm text-slate-500">Restaurante</div></div>
+        <div class="glass-card rounded-3xl p-8"><p class="text-slate-300 mb-8">“La estrategia elevó nuestra marca y mejoró nuestros leads.”</p><div class="font-bold">Andrea Salazar</div><div class="text-sm text-slate-500">Clínica estética</div></div>
+        <div class="glass-card rounded-3xl p-8"><p class="text-slate-300 mb-8">“Por fin entendimos qué campañas nos traían retorno.”</p><div class="font-bold">Miguel Torres</div><div class="text-sm text-slate-500">Inmobiliaria</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="px-6 py-24 bg-slate-950/70 relative z-10">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-violet-300 font-bold mb-4">FAQ</p>
+        <h2 class="text-4xl md:text-6xl font-black">
+          Preguntas frecuentes
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        <div class="faq-item glass rounded-3xl p-6 cursor-pointer">
+          <div class="flex justify-between"><h3 class="text-xl font-bold">¿Trabajan con negocios pequeños?</h3><span class="faq-icon text-2xl text-violet-300 transition">+</span></div>
+          <div class="faq-answer text-slate-400 mt-4">Sí. Trabajamos con emprendedores, negocios locales y pymes.</div>
+        </div>
+
+        <div class="faq-item glass rounded-3xl p-6 cursor-pointer">
+          <div class="flex justify-between"><h3 class="text-xl font-bold">¿Cuándo se ven resultados?</h3><span class="faq-icon text-2xl text-violet-300 transition">+</span></div>
+          <div class="faq-answer text-slate-400 mt-4">Los primeros indicadores suelen verse durante las primeras semanas.</div>
+        </div>
+
+        <div class="faq-item glass rounded-3xl p-6 cursor-pointer">
+          <div class="flex justify-between"><h3 class="text-xl font-bold">¿También crean contenido?</h3><span class="faq-icon text-2xl text-violet-300 transition">+</span></div>
+          <div class="faq-answer text-slate-400 mt-4">Sí. Creamos contenido, anuncios, copies, piezas visuales y landing pages.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contacto" class="px-6 py-24 relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="rounded-[40px] bg-gradient-to-br from-violet-600 to-blue-500 p-10 md:p-20 text-center overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-white/20 rounded-full blur-3xl"></div>
+
+        <div class="relative z-10">
+          <h2 class="text-4xl md:text-7xl font-black leading-tight mb-8">
+            ¿Listo para llevar tu marketing al siguiente nivel?
+          </h2>
+
+          <p class="text-xl text-blue-50 max-w-3xl mx-auto mb-10">
+            Agenda una llamada y descubre cómo podemos ayudarte a generar más clientes y ventas.
+          </p>
+
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="https://wa.me/51999999999?text=Hola%20Eureka%2C%20quiero%20agendar%20una%20llamada" target="_blank" class="bg-white text-slate-950 px-8 py-5 rounded-2xl font-black hover:scale-105 transition">
+              Agendar llamada
+            </a>
+            <a href="mailto:hola@eurekadigital.pe" class="bg-slate-950/25 border border-white/25 px-8 py-5 rounded-2xl font-bold hover:bg-slate-950/40 transition">
+              Enviar correo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="px-6 pt-10 pb-24 border-t border-white/10 relative z-10">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-blue-400 flex items-center justify-center font-black">E</div>
+          <div>
+            <div class="font-black">EUREKA</div>
+            <div class="text-sm text-slate-500">Agencia Digital</div>
+          </div>
+        </div>
+        <p class="text-slate-500">Marketing que convierte en clientes reales.</p>
+      </div>
+
+      <div>
+        <h4 class="font-bold mb-4">Servicios</h4>
+        <ul class="space-y-3 text-slate-500">
+          <li>Estrategia</li>
+          <li>Paid Media</li>
+          <li>Creatividad</li>
+          <li>Datos</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold mb-4">Empresa</h4>
+        <ul class="space-y-3 text-slate-500">
+          <li>Proceso</li>
+          <li>Resultados</li>
+          <li>Testimonios</li>
+          <li>FAQ</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold mb-4">Contacto</h4>
+        <ul class="space-y-3 text-slate-500">
+          <li>hola@eurekadigital.pe</li>
+          <li>+51 999 999 999</li>
+          <li>Lima, Perú</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/51999999999?text=Hola%20Eureka%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n"
+     target="_blank"
+     class="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-green-500 flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script>
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
